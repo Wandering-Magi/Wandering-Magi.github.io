@@ -1,4 +1,5 @@
 :root {
+  /* Solarized Color Scheme */
   --base03: #002b36; /**/
   --base02: #073642; /**/
   --base01: #586e75; /**/
@@ -15,9 +16,98 @@
   --blue: #268bd2;
   --cyan: #2aa198;
   --green: #859900;
+
+  --title-card-height: 200px;
+  --title-hex-width: 100px;
+  --title-hex-height: calc(var(--title-hex-width) * 1.1547);
+  --title-hex-margin: 1px;
+  --title-hex-margin-bottom: calc(
+    var(--title-hex-margin) - var(--title-hex-width) * 0.2886
+  );
 }
 
 body {
   background-color: var(--base03);
   color: var(--base0);
+  margin: 0;
+  padding: 0;
+}
+
+.title-card {
+  background: linear-gradient(45deg, var(--violet), var(--base0));
+  height: var(--title-card-height);
+  width: 817px;
+  margin: 0 auto;
+
+  display: grid;
+}
+
+.title-hex-container {
+  position: relative;
+  overflow: hidden;
+  height: var(--title-card-height);
+  font-size: 0;
+}
+
+.row1 {
+  display: inline-flex;
+  margin-left: -50px;
+  margin-top: -50px;
+  margin-bottom: var(--title-hex-margin-bottom);
+  overflow: hidden;
+}
+.row3 {
+  display: inline-flex;
+  overflow: hidden;
+  margin-top: var(--title-hex-margin-bottom);
+  margin-left: -50px;
+}
+.row2 {
+  display: inline-flex;
+  overflow: hidden;
+  margin-top: var(--title-hex-margin-bottom);
+  margin-left: var(--title-hex-margin);
+}
+.title-hexagon {
+  background: var(--base03);
+  background-attachment: fixed;
+  position: relative;
+  height: var(--title-hex-height);
+  width: var(--title-hex-width);
+  margin: var(--title-hex-margin);
+  font-size: initial;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: 1s;
+}
+.title-hexagon::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--base02);
+}
+.title-hexagon:hover {
+  background: var(--yellow);
+  transition: 0s;
+}
+
+.title-name {
+  pointer-events: none;
+  display: inline;
+  position: absolute;
+
+  height: var(--title-card-height);
+  width: 817px;
+  font-size: 75px;
+
+  text-align: center;
+  vertical-align: middle;
+  line-height: var(--title-card-height);
+
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--yellow);
+  -webkit-text-stroke: 1px var(--base1);
 }

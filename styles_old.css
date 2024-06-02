@@ -1,0 +1,130 @@
+:root {
+  /* Solarized Color Scheme */
+  --base03: #002b36; /**/
+  --base02: #073642; /**/
+  --base01: #586e75; /**/
+  --base00: #657b83;
+  --base0: #839496; /**/
+  --base1: #93a1a1; /**/
+  --base2: #eee8d5;
+  --base3: #fdf6e3;
+  --yellow: #b58900;
+  --orange: #cb4b16;
+  --red: #dc322f;
+  --magenta: #d33682;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+}
+
+body {
+  background-color: var(--base03);
+  color: var(--base0);
+}
+
+.title-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, calc(var(--s) + 2 * var(--mh)));
+  justify-content: center;
+  --s: 80px; /* size */
+  --r: 1.15; /* ratio */
+  /* clip-path */
+  --h: 0.5;
+  --v: 0.25;
+  --hc: calc(clamp(0, var(--h), 0.5) * var(--s));
+  --vc: calc(clamp(0, var(--v), 0.5) * var(--s) * var(--r));
+
+  /*margin */
+  --mv: 2px; /* vertical */
+  --mh: calc(var(--mv) + (var(--s) - 2 * var(--hc)) / 2); /* horizontal */
+  /* for the float*/
+  --f: calc(2 * var(--s) * var(--r) + 4 * var(--mv) - 2 * var(--vc) - 2px);
+}
+
+.hex-container {
+  background: linear-gradient(45deg, var(--base0), var(--violet));
+}
+.hexagon {
+  clip: rect(0 auto auto 0);
+}
+
+.hex-container {
+  grid-column: 1/-1;
+  max-width: 790px;
+  margin: 0 auto;
+  font-size: 0; /*disable white space between inline block element */
+  position: relative;
+  padding-bottom: 50px;
+  filter: drop-shadow(2px 2px 1px #333);
+}
+
+.hex-container div {
+  width: var(--s);
+  margin: var(--mv) var(--mh);
+  height: calc(var(--s) * var(--r));
+  display: inline-block;
+  font-size: initial;
+  clip-path: polygon(
+    var(--hc) 0,
+    calc(100% - var(--hc)) 0,
+    100% var(--vc),
+    100% calc(100% - var(--vc)),
+    calc(100% - var(--hc)) 100%,
+    var(--hc) 100%,
+    0 calc(100% - var(--vc)),
+    0 var(--vc)
+  );
+  margin-bottom: calc(var(--mv) - var(--vc));
+}
+
+.hex-container::before {
+  content: "";
+  width: calc(var(--s) / 2 + var(--mh));
+  float: left;
+  height: 120%;
+  shape-outside: repeating-linear-gradient(
+    transparent 0 calc(var(--f) - 2px),
+    #fff 0 var(--f)
+  );
+}
+
+/*
+.hex-container div::before {
+  padding-top: 25px;
+  padding-right: 30px;
+  content: "Wandering \A Magi";
+  text-transform: uppercase;
+  white-space: pre;
+  font-size: 75px;
+  font-family: sans-serif;
+  font-weight: bold;
+  position: absolute;
+  color: var(--yellow);
+  background: linear-gradient(45deg, var(--base0), var(--violet));
+}*/
+
+.hexagon {
+  transition: 2s;
+}
+.hexagon:hover {
+  transition: 0s;
+  background-color: #b58900;
+}
+/*
+.hex-container div {
+  animation: show 3s infinite;
+  opacity: 0;
+}
+@for $i from 1 through 43 {
+  .hex-container div:nth-child(#{$i}) {
+    animation-delay: (2 * random()) * 1s;
+  }
+}
+
+@keyframes show {
+  60% {
+    opacity: 1;
+  }
+}
+*/
