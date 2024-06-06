@@ -17,11 +17,11 @@
   --cyan: #2aa198;
   --green: #859900;
 
-  --title-card-height: 200px;
-  --title-hex-width: 100px;
+  --title-card-height: 100px;
+  --title-hex-width: 50px;
   --title-hex-height: calc(var(--title-hex-width) * 1.1547);
   --title-hex-margin: 1px;
-  --title-hex-margin-bottom: calc(
+  --title-hex-margin-top: calc(
     var(--title-hex-margin) - var(--title-hex-width) * 0.2886
   );
 }
@@ -36,7 +36,7 @@ body {
 .title-card {
   background: linear-gradient(45deg, var(--violet), var(--base0));
   height: var(--title-card-height);
-  width: 817px;
+  width: 100%;
   margin: 0 auto;
 
   display: grid;
@@ -48,26 +48,44 @@ body {
   height: var(--title-card-height);
   font-size: 0;
 }
-
 .row1 {
   display: inline-flex;
-  margin-left: -50px;
-  margin-top: -50px;
-  margin-bottom: var(--title-hex-margin-bottom);
+  /* margin-left: calc(var(--title-hex-height)); */
+  /* margin-top: calc(var(--title-hex-width) / -2); */
+  margin-top: calc(var(--title-hex-margin) - var(--title-hex-height) * 0.2886);
+  margin-bottom: var(--title-hex-margin-top);
   overflow: hidden;
 }
-.row3 {
+.oddrow {
+  display: inline-flex;
+  margin-top: calc(var(--title-hex-margin-top));
+  overflow: hidden;
+}
+.evenrow {
   display: inline-flex;
   overflow: hidden;
-  margin-top: var(--title-hex-margin-bottom);
+  margin-top: var(--title-hex-margin-top);
+  /* margin-left: calc(
+    1.732 * var(--title-hex-width) + 4 * var(--title-hex-margin)
+  ); */
+  margin-left: calc(
+    ((var(--title-hex-width) / 2) + var(--title-hex-margin)) * -1
+  );
+  /*calc(1.732 * var(--title-hex-width) + 4 * var(--title-hex-margin))*/
+}
+
+/* .row3 {
+  display: inline-flex;
+  overflow: hidden;
+  margin-top: var(--title-hex-margin-top);
   margin-left: -50px;
 }
 .row2 {
   display: inline-flex;
   overflow: hidden;
-  margin-top: var(--title-hex-margin-bottom);
+  margin-top: var(--title-hex-margin-top);
   margin-left: var(--title-hex-margin);
-}
+} */
 .title-hexagon {
   background: var(--base03);
   background-attachment: fixed;
@@ -98,7 +116,7 @@ body {
   position: absolute;
 
   height: var(--title-card-height);
-  width: 817px;
+  width: 100%;
   font-size: 75px;
 
   text-align: center;
