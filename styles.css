@@ -17,7 +17,7 @@
   --cyan: #2aa198;
   --green: #859900;
 
-  --title-card-height: 100px;
+  --title-card-height: 120px;
   --title-hex-width: 50px;
   --title-hex-height: calc(var(--title-hex-width) * 1.1547);
   --title-hex-margin: 1px;
@@ -33,12 +33,13 @@ body {
   padding: 0;
 }
 
+/*--- TITLE CARD DECLARATIONS ---*/
 .title-card {
   background: linear-gradient(45deg, var(--violet), var(--base0));
   height: var(--title-card-height);
   width: 100%;
   margin: 0 auto;
-
+  overflow: hidden;
   display: grid;
 }
 
@@ -48,13 +49,8 @@ body {
   height: var(--title-card-height);
   font-size: 0;
 }
-.row1 {
-  display: inline-flex;
-  /* margin-left: calc(var(--title-hex-height)); */
-  /* margin-top: calc(var(--title-hex-width) / -2); */
+.title-hex-container .hexrow:first-child {
   margin-top: calc(var(--title-hex-margin) - var(--title-hex-height) * 0.2886);
-  margin-bottom: var(--title-hex-margin-top);
-  overflow: hidden;
 }
 .oddrow {
   display: inline-flex;
@@ -65,27 +61,11 @@ body {
   display: inline-flex;
   overflow: hidden;
   margin-top: var(--title-hex-margin-top);
-  /* margin-left: calc(
-    1.732 * var(--title-hex-width) + 4 * var(--title-hex-margin)
-  ); */
   margin-left: calc(
     ((var(--title-hex-width) / 2) + var(--title-hex-margin)) * -1
   );
-  /*calc(1.732 * var(--title-hex-width) + 4 * var(--title-hex-margin))*/
 }
 
-/* .row3 {
-  display: inline-flex;
-  overflow: hidden;
-  margin-top: var(--title-hex-margin-top);
-  margin-left: -50px;
-}
-.row2 {
-  display: inline-flex;
-  overflow: hidden;
-  margin-top: var(--title-hex-margin-top);
-  margin-left: var(--title-hex-margin);
-} */
 .title-hexagon {
   background: var(--base03);
   background-attachment: fixed;
@@ -128,4 +108,45 @@ body {
   text-transform: uppercase;
   color: var(--yellow);
   -webkit-text-stroke: 1px var(--base1);
+}
+
+@media (max-width: 500px) {
+  :root {
+    --title-card-height: 75px;
+  }
+
+  .title-name {
+    font-size: 30px;
+  }
+}
+
+/*--- NAV BAR ---*/
+#navbar {
+  width: 100%;
+  display: flex;
+  background: var(--base02);
+  justify-content: space-evenly;
+}
+#navbar a {
+  text-decoration: none;
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  padding: 0.3em 0;
+}
+#navbar a:visited {
+  color: var(--yellow);
+}
+.fixednav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+/*THROW AWAY*/
+.wastingSpace {
+  height: 1000000px;
+  width: 100%;
 }
