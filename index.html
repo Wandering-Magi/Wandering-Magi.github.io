@@ -2,175 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Wandering Magi</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="./styles.css"
+    />
+    <script src="./scripts.js"></script>
   </head>
   <body>
     <main>
       <div class="title-card">
-        <div class="title-hex-container">
-          <div class="row1">
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
+        <div
+          class="title-hex-container"
+          id="title-hex-container"
+        >
+          <!-- <div class="row1">
             <div class="title-hexagon"></div>
           </div>
           <div class="row2 evenrow">
             <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
           </div>
           <div class="row3 oddrow">
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
             <div class="title-hexagon"></div>
           </div>
           <div class="row4 evenrow">
             <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
           </div>
           <div class="row5 oddrow">
             <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
-            <div class="title-hexagon"></div>
           </div>
-        </div>
+        </div> -->
 
         <div class="title-name">
           <span>Wandering Magi</span>
